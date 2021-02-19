@@ -1,5 +1,14 @@
+import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import { render } from 'react-dom';
+import CodeCell from './components/code-cell';
 
-const app = <div>Hello!</div>;
+const App = () => {
+	return (
+		<div>
+			<CodeCell />
+			<CodeCell />
+		</div>
+	);
+};
 
-render(app, document.getElementById('root'));
+render(<App />, document.getElementById('root'));

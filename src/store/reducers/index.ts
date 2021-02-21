@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import cellsReducer from './cellsReducer';
+import cells from './cellsReducer';
+import bundles from './bundlesReducer';
 
 const rootReducer = combineReducers({
-	cells: cellsReducer,
+	cells,
+	bundles,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

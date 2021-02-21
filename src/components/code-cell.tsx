@@ -1,33 +1,43 @@
-import bundle from '../bundler';
-import { useState, useEffect } from 'react';
+import './code-cell.css';
+import { useEffect } from 'react';
 import CodeEditor from './code-editor';
 import Preview from './preview';
 import Resizable from './resizable';
 import { Cell } from '../store';
 import useActions from '../hooks/useActions';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 
 interface CodeCellProps {
 	cell: Cell;
 }
 
 const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
-	const [code, setCode] = useState('');
-	const [err, setErr] = useState('');
-	const { updateCell } = useActions();
+	const { updateCell, createBundle } = useActions();
+	const bundle = useTypedSelector(({ bundles }) => bundles[cell.id]);
 
 	useEffect(() => {
-		const timeout = setTimeout(async () => {
-			const output = await bundle(cell.content);
-			setCode(output.code);
-			setErr(output.err);
-		}, 1000);
+		if (!bundle) {
+			createBundle(cell.id, cell.content);
+			return;
+		}
+
+		const timeout = setTimeout(
+			async () => createBundle(cell.id, cell.content),
+			1000
+		);
 
 		return () => clearTimeout(timeout);
-	}, [cell.content]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [cell, createBundle]);
 
 	return (
 		<Resizable direction="vertical">
-			<div style={{ height: 'calc(100% - 10px)', display: 'flex', flexDirection: 'row' }}>
+			<div
+				style={{
+					height: 'calc(100% - 10px)',
+					display: 'flex',
+					flexDirection: 'row',
+				}}>
 				<Resizable direction="horizontal">
 					<CodeEditor
 						initialValue={cell.content}
@@ -35,7 +45,17 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
 					/>
 				</Resizable>
 
-				<Preview code={code} err={err} />
+				<div className="progress-wrapper">
+					{!bundle || bundle.loading ? (
+						<div className="progress-cover">
+							<progress className="progress is-small is-primary" max="100">
+								Loading
+							</progress>
+						</div>
+					) : (
+						<Preview code={bundle.code} err={bundle.err} />
+					)}
+				</div>
 			</div>
 		</Resizable>
 	);

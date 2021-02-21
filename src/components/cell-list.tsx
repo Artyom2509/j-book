@@ -1,3 +1,4 @@
+import './cell-list.css';
 import { Fragment } from 'react';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import AddCell from './add-cell';
@@ -16,7 +17,7 @@ const CellList: React.FC = () => {
 	));
 
 	return (
-		<div>
+		<div className="cell-list">
 			<AddCell
 				key={Math.random()}
 				forceVisible={cells.length === 0}

@@ -1,0 +1,35 @@
+.add-cell {
+  position: relative;
+  margin: 0 2.5%;
+  opacity: 0;
+  transition: opacity .5s ease-out;
+}
+
+.add-cell:active {
+  opacity: 0 !important;
+  transition: opacity 0s;
+}
+
+.add-cell:hover, .force-visible {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+
+
+
+.add-buttons {
+  margin: 5px auto;
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-cell .devider {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  height: 1px;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  z-index: -1;
+}

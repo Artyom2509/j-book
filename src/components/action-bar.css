@@ -1,0 +1,16 @@
+.action-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+}
+
+.action-bar:hover {
+  opacity: 1;
+}
+
+.action-bar .button {
+  border-left: 1px solid rgb(193, 103, 7);
+}

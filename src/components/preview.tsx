@@ -39,7 +39,6 @@ const html = `
 
 const Preview: React.FC<PreviewProps> = ({ code, err }) => {
 	const iframe = useRef<any>();
-	console.log('err', err);
 
 	useEffect(() => {
 		iframe.current.srcDoc = html;

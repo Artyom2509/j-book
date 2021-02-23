@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-typescript-portfolio"]=this["webpackJsonpreact-typescript-portfolio"]||[]).push([[184],{300:function(t,e){Prism.languages.ini={comment:/^[ \t]*[;#].*$/m,selector:/^[ \t]*\[.*?\]/m,constant:/^[ \t]*[^\s=]+?(?=[ \t]*=)/m,"attr-value":{pattern:/=.*/,inside:{punctuation:/^[=]/}}}}}]);
-//# sourceMappingURL=184.0121ff54.chunk.js.map

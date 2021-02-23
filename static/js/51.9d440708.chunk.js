@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-typescript-portfolio"]=this["webpackJsonpreact-typescript-portfolio"]||[]).push([[51],{169:function(t,e){Prism.languages.brainfuck={pointer:{pattern:/<|>/,alias:"keyword"},increment:{pattern:/\+/,alias:"inserted"},decrement:{pattern:/-/,alias:"deleted"},branching:{pattern:/\[|\]/,alias:"important"},operator:/[.,]/,comment:/\S+/}}}]);
+//# sourceMappingURL=51.9d440708.chunk.js.map

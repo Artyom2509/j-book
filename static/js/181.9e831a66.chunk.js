@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-typescript-portfolio"]=this["webpackJsonpreact-typescript-portfolio"]||[]).push([[181],{297:function(e,n){var a;(a=Prism).languages.ignore={comment:/^#.*/m,entry:{pattern:/\S(?:.*(?:(?:\\ )|\S))?/,alias:"string",inside:{operator:/^!|\*\*?|\?/,regex:{pattern:/(^|[^\\])\[[^\[\]]*\]/,lookbehind:!0},punctuation:/\//}}},a.languages.gitignore=a.languages.ignore,a.languages.hgignore=a.languages.ignore,a.languages.npmignore=a.languages.ignore}}]);
-//# sourceMappingURL=181.9e831a66.chunk.js.map

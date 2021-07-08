@@ -7,6 +7,6 @@ import React from 'react'
 
 const Hello = () => (<h1>Hello world!</h1>)
 
-show(Hello)
+show(<Hello/>)
 ```` 
 Technologies: React, TypeScript, WebAssembly.
